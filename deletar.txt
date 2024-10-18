@@ -1,0 +1,1 @@
+Superusuário do django: ludeabreu / djangogirl
