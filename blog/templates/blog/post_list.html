@@ -8,16 +8,13 @@
         <h1>Meu Blog Django</h1>
     </header>
     <main>
-        <article>
-            <time>Publicado em 18/06/2024 às 17:25</time>
-            <h2><a href="">Meu primeiro post</a></h2>
-            <p>“Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </article>
-        <article>
-            <time>Publicado em 18/06/2024 às 17:25</time>
-            <h2><a href="">Meu segundo post</a></h2>
-            <p>“Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </article>
+        {% for post in postagens %}
+            <article>
+                <time>Publicado em: {{ post.data_publicacao }}</time>
+                <h2><a href="">{{ post.titulo }}</a></h2>
+                <p>{{ post.corpo|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
     </main>
 
 </body>
