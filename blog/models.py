@@ -13,5 +13,8 @@ class Post(models.Model):
     def publicar(self):
         self.data_publicacao = timezone.now()
         self.save()
+    def despublicar(self):
+        self.data_publicacao = None
+        self.save()
     def __str__(self):
         return self.titulo
